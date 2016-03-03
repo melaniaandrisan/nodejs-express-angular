@@ -11,25 +11,34 @@ variables and functions).
 
 */
 
-app.controller("myCtrl", function($scope) {
+app.controller("myCtrl", function($scope,modelInfo) {
 
     $scope.firstName	= "John";
     $scope.lastName= "Doe";
 
+    $scope.modelData = modelInfo.getModelData();
 
-    $scope.names = [
-      {name:'Jani',country:'Norway'},
-      {name:'Carl',country:'Sweden'},
-      {name:'Margareth',country:'England'},
-      {name:'Hege',country:'Norway'},
-      {name:'Joe',country:'Denmark'},
-      {name:'Gustav',country:'Sweden'},
-      {name:'Birgit',country:'Denmark'},
-      {name:'Mary',country:'England'},
-      {name:'Kai',country:'Norway'}
-  ];
-  $scope.orderByMe = function(x) {
-    $scope.myOrderBy = x;
-  }
+    $scope.names = modelInfo.getNames();
+
+    $scope.orderByMe = function(x) {
+      $scope.myOrderBy = x;
+    }
+
+//http requests
+/*
+    $http.get("customers.php").then(function(response) {
+        $scope.myData = response.data.records;
+    });
+
+    $http.get("wrongfilename.htm")
+    .then(function(response) {
+        //First function handles success
+        $scope.content = response.data;
+    }, function(response) {
+        //Second function handles error
+        $scope.content = "Something went wrong";
+    });
+
+*/
 
 });
