@@ -6,9 +6,6 @@ var path = require('path');
 // To be able to link the js files from html
 app.use(express.static(__dirname + '/public'));
 
-//for css
-app.use('/styles', express.static(__dirname + '/public'));
-
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });

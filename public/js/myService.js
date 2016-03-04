@@ -15,7 +15,17 @@ app.service('modelInfo', function() {
         {name:'Mary',country:'England'},
         {name:'Kai',country:'Norway'}
       ];
-
       return names;
+    }
+
+    this.getCountries = function(){
+      var countries = [
+        { country: 'Norway'},
+        {country: 'Sweden'},
+        {country:'England'},
+        {country:'Denmark'}
+      ];
+
+      return countries;
     }
 });

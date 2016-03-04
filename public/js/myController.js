@@ -20,6 +20,7 @@ app.controller("myCtrl", function($scope,modelInfo) {
 
     $scope.names = modelInfo.getNames();
 
+    $scope.countries = modelInfo.getCountries();
     $scope.orderByMe = function(x) {
       $scope.myOrderBy = x;
     }
