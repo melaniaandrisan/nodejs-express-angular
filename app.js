@@ -8,7 +8,12 @@ var path = require('path');
 // To be able to link the js files from html
 app.use(express.static(__dirname + '/public'));
 
-var userService = require('./public/services/userService.js');
+
+
+var users = require('./public/services/users');
+
+
+app.use('/users', users);
 
 app.get('/', function (req, res) {
   res.send('Hello World!');

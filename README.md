@@ -15,7 +15,10 @@ Some nice to know:
 
 Next:
 - create services in express
+  - learn what REST means in expressjs
+  - store and retrieve JSON data in a collection using HTTP POST and HTTP GET  
 - connect to different express services from angular and make promises work using [bluebirdjs](6).
+  - use [AJAX](7) for all data operations with [XMLHttpRequest](8)
 
 
 From where I started:
@@ -30,3 +33,5 @@ From where I started:
 [4]:http://www.w3schools.com/angular/
 [5]:https://github.com/melaniaandrisan/nodejs-express-angular/blob/master/app.js
 [6]:http://bluebirdjs.com/docs/features.html
+[7]:http://www.w3schools.com/ajax/ajax_intro.asp
+[8]:https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
