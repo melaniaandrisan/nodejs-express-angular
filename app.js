@@ -2,9 +2,13 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
+
+
 // Serve static content for the app from the "public" directory in the application directory.
 // To be able to link the js files from html
 app.use(express.static(__dirname + '/public'));
+
+var userService = require('./public/services/userService.js');
 
 app.get('/', function (req, res) {
   res.send('Hello World!');

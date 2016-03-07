@@ -14,7 +14,6 @@ Some nice to know:
 - to have 2 way binding with Angular I needed to have the object in `$scope`
 
 Next:
-- investigate express-generator
 - create services in express
 - connect to different express services from angular and make promises work using [bluebirdjs](6).
 
