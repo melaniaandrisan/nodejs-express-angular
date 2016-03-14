@@ -27,20 +27,27 @@ Add container to Azure:
 - connect to Azure using Azure Command-Line Interface (Azure CLI) using this [tutorial](8)
 - learn more about CLI from this [tutorial](10)
 - add ssl [tutorial](12)
-- create a vm with docker staring from [here](13)
+- create a vm with docker starting from [here](13)
 - Use the new Azure Resource Manager not Azure Service Management (the old stuff :) )
 `azure config mode arm`
 - use `docker-machine` to create a vm in Azure
-- get [Started with Docker](14)
+- I created the machine without added the ssh key so I needed to add it afterwords copying it into the settings. To get my key I used this `cat .ssh/id_rsa.pub` command.
+- to get docker info in the machine use `docker -H tcp://testAzureMelaAA.cloudapp.net:2376 info` (I am using my Mac to run this so I am not using `sudo`) as shown [here](16)
+- get [Started with Docker](14) on Azure
 
-GO.CD:
+For my work project I users Go.cd to have the a continuous delivery done properly.
+Here is what I learned and did:
 - it has a very nice [documentation](15)
 - I created 2 pipelines:
   - One to create the Docker image
+    - it has the BitBucket repository as material with the Dockerfile in it
+    - it has a job with a task which runs the docker file
   - And another to create a vm in Azure with the new docker image  
-    - It has a `Fetch Artifact Task` to get the Docker image for the previous pipeline
+    - it has the BitBucket repository as material with the `.sh` scripts in it
+    - it has a `Fetch Artifact Task` to get the Docker image for the previous pipeline
+    - it has a job with a task which runs the `create-azure-machine.sh`
 
-Next:
+Next in the app:
 - create services in express
   - learn what REST means in express.js
   - store and retrieve JSON data in a collection using HTTP POST and HTTP GET  
@@ -70,3 +77,5 @@ From where I started:
 [13]:https://docs.docker.com/machine/drivers/azure/
 [14]:https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-ubuntu-quickstart/
 [15]:https://docs.go.cd/current/introduction/concepts_in_go.html
+[16]:https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-with-xplat-cli/
+[Install Azure cli]:https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/
