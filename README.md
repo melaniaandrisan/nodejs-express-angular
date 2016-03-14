@@ -78,4 +78,4 @@ From where I started:
 [14]:https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-ubuntu-quickstart/
 [15]:https://docs.go.cd/current/introduction/concepts_in_go.html
 [16]:https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-with-xplat-cli/
-[Install Azure cli]:https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/
+[17]:https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/
