@@ -4,7 +4,7 @@
   "description": "An application build to see how angular and express work together",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
   "keywords": [
     "angular",

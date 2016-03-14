@@ -13,12 +13,19 @@
 
     var fileSource = appDir + "/" + "users.json";
     console.log( fileSource );
-
+/*
     fs.readFile( fileSource, 'utf8', function (err, data) {
-         console.log( data );
-         res.send( data );
+      if (err) throw err;
+          var config = JSON.parse(data);
+          console.log('Config: ', config);
+
+          res.send(config);
      });
 
+*/
+
+var config = fs.readFileSync(fileSource);
+console.log('Config: ' + JSON.parse(config));
 
      //res.send('respond with a resource');
   });

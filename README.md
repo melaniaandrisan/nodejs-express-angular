@@ -12,13 +12,41 @@ Some nice to know:
 - to be able to get static content properly I needed to add in the same file `app.use(express.static(__dirname + '/public'));`
 - to add a link to a html page use `link` not `script`
 - to have 2 way binding with Angular I needed to have the object in `$scope`
+- get the app directory with `var appDir = path.dirname(require.main.filename);`
+- the difference between express 3.x and 4.x and the bin\www file [here](11)
+
+Dockerizing:
+- create a dockerfile in root directory
+  - use the offices node image
+  - clone the git repository
+  - run `node app.js`
+
+Add container to Azure:
+- create an Azure subscription (in my case a work one)
+  - the best is to have a subscription for every project
+- connect to Azure using Azure Command-Line Interface (Azure CLI) using this [tutorial](8)
+- learn more about CLI from this [tutorial](10)
+- add ssl [tutorial](12)
+- create a vm with docker staring from [here](13)
+- Use the new Azure Resource Manager not Azure Service Management (the old stuff :) )
+`azure config mode arm`
+- use `docker-machine` to create a vm in Azure
+- get [Started with Docker](14)
+
+GO.CD:
+- it has a very nice [documentation](15)
+- I created 2 pipelines:
+  - One to create the Docker image
+  - And another to create a vm in Azure with the new docker image  
+    - It has a `Fetch Artifact Task` to get the Docker image for the previous pipeline
 
 Next:
 - create services in express
-  - learn what REST means in expressjs
+  - learn what REST means in express.js
   - store and retrieve JSON data in a collection using HTTP POST and HTTP GET  
 - connect to different express services from angular and make promises work using [bluebirdjs](6).
   - use [AJAX](7) for all data operations with [XMLHttpRequest](8)
+
 
 
 From where I started:
@@ -35,3 +63,10 @@ From where I started:
 [6]:http://bluebirdjs.com/docs/features.html
 [7]:http://www.w3schools.com/ajax/ajax_intro.asp
 [8]:https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+[9]:https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-connect/
+[10]:https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-azure-resource-manager/
+[11]:http://stackoverflow.com/questions/23169941/what-does-bin-www-do-in-express-4-x
+[12]:https://azure.microsoft.com/en-us/documentation/articles/cloud-services-configure-ssl-certificate-portal/
+[13]:https://docs.docker.com/machine/drivers/azure/
+[14]:https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-ubuntu-quickstart/
+[15]:https://docs.go.cd/current/introduction/concepts_in_go.html
